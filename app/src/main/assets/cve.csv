@@ -1,0 +1,16 @@
+id,description,cvss,severity,vector
+CVE-2021-44228,Apache Log4j2 remote code execution,10.0,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+CVE-2022-22965,Spring Framework RCE via Data Binding,9.8,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+CVE-2020-1472,Netlogon Elevation of Privilege,10.0,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+CVE-2019-0708,Remote Desktop Services RCE,9.8,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+CVE-2017-0144,MS17-010 EternalBlue SMB RCE,9.3,CRITICAL,AV:N/AC:M/Au:N/C:C/I:C/A:C
+CVE-2014-0160,OpenSSL Heartbleed,7.5,HIGH,AV:N/AC:L/Au:N/C:P/I:N/A:N
+CVE-2018-11776,Apache Struts2 RCE via OGNL,9.8,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+CVE-2021-34527,Windows Print Spooler RCE,8.8,HIGH,AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+CVE-2021-34473,Microsoft Exchange SSRF,9.1,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+CVE-2020-0796,SMBv3 Compression RCE,10.0,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+CVE-2022-21907,Windows HTTP Protocol Stack RCE,10.0,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+CVE-2023-23397,Microsoft Outlook Elevation of Privilege,9.8,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+CVE-2021-26084,Atlassian Confluence OGNL Injection,9.8,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+CVE-2022-1388,F5 BIG-IP iControl REST Auth Bypass,9.8,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+CVE-2021-41773,Apache HTTP Server Path Traversal,7.5,HIGH,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
