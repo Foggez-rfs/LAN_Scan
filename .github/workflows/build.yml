@@ -24,11 +24,19 @@ jobs:
     - name: Build APK
       run: ./gradlew assembleRelease
     
-    - name: List APK files
-      run: find app/build/outputs -name "*.apk" -type f
+    - name: Find all APK and AAB files
+      run: |
+        echo "=== Searching for APK files ==="
+        find . -name "*.apk" -type f 2>/dev/null
+        echo "=== Searching for AAB files ==="
+        find . -name "*.aab" -type f 2>/dev/null
+        echo "=== Full build output structure ==="
+        find app/build/outputs -type f 2>/dev/null || echo "No outputs directory"
     
-    - name: Upload APK
+    - name: Upload all APKs
       uses: actions/upload-artifact@v4
       with:
         name: LAN_Scan_APK
-        path: app/build/outputs/apk/release/app-release.apk
+        path: |
+          **/*.apk
+          **/*.aab
