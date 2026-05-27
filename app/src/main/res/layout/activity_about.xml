@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#0a1929"
+    android:padding="32dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LAN SCAN"
+        android:textColor="#22d3ee"
+        android:textSize="28sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="v1.0"
+        android:textColor="#0891b2"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\nNetwork Security Analyzer\n\nPowered by nmap\nCVE Database from NVD\n\nDeveloper: Foggez-rfs\nLicense: MIT"
+        android:textColor="#67e8f9"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

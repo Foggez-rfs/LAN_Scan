@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="scan_modes">
+        <item>1. Быстрое</item>
+        <item>2. Версии</item>
+        <item>3. ОС</item>
+        <item>4. NSE</item>
+        <item>5. Агрессивное</item>
+        <item>6. Все порты</item>
+        <item>7. UDP</item>
+        <item>8. CVE</item>
+        <item>9. МОЩНЫЙ</item>
+        <item>10. УЛЬТРА</item>
+    </string-array>
+</resources>

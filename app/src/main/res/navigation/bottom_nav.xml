@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_scan" android:title="Скан" android:icon="@drawable/ic_scan"/>
+    <item android:id="@+id/nav_network" android:title="Сеть" android:icon="@drawable/ic_network"/>
+    <item android:id="@+id/nav_cve" android:title="CVE" android:icon="@drawable/ic_cve"/>
+    <item android:id="@+id/nav_history" android:title="История" android:icon="@drawable/ic_history"/>
+</menu>

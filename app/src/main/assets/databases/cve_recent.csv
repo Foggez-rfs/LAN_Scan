@@ -1,0 +1,31 @@
+id,description,cvss,severity,vector
+CVE-2021-44228,Apache Log4j2 JNDI features do not protect against attacker controlled LDAP and other JNDI related endpoints,10.0,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+CVE-2022-22965,Spring Framework RCE via Data Binding on JDK 9+,9.8,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+CVE-2020-1472,Netlogon Elevation of Privilege Vulnerability,10.0,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+CVE-2019-0708,Remote Desktop Services Remote Code Execution Vulnerability,9.8,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+CVE-2017-0144,Windows SMB Remote Code Execution Vulnerability,9.3,CRITICAL,AV:N/AC:M/Au:N/C:C/I:C/A:C
+CVE-2014-0160,OpenSSL Heartbleed information disclosure,7.5,HIGH,AV:N/AC:L/Au:N/C:P/I:N/A:N
+CVE-2018-11776,Apache Struts2 RCE via OGNL injection,9.8,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+CVE-2021-34527,Windows Print Spooler Remote Code Execution,8.8,HIGH,AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+CVE-2021-34473,Microsoft Exchange Server Remote Code Execution,9.1,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+CVE-2020-0796,SMBv3 Compression Buffer Overflow Remote Code Execution,10.0,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+CVE-2022-21907,Windows HTTP Protocol Stack Remote Code Execution,10.0,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+CVE-2023-23397,Microsoft Outlook Elevation of Privilege,9.8,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+CVE-2021-26084,Atlassian Confluence OGNL Injection RCE,9.8,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+CVE-2022-1388,F5 BIG-IP iControl REST Authentication Bypass,9.8,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+CVE-2021-41773,Apache HTTP Server Path Traversal,7.5,HIGH,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+CVE-2022-30190,Microsoft Support Diagnostic Tool RCE,7.8,HIGH,AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+CVE-2021-40444,Microsoft MSHTML Remote Code Execution,8.8,HIGH,AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+CVE-2020-0601,Windows CryptoAPI Spoofing Vulnerability,8.1,HIGH,AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N
+CVE-2022-26134,Atlassian Confluence OGNL Injection RCE,9.8,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+CVE-2021-38647,Open Management Infrastructure RCE,9.8,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+CVE-2022-22963,Spring Cloud Function SpEL Injection,9.8,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+CVE-2021-22204,ExifTool Arbitrary Code Execution,7.8,HIGH,AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+CVE-2019-11510,Pulse Secure Pulse Connect Secure Arbitrary File Read,10.0,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
+CVE-2021-26855,Microsoft Exchange Server SSRF,9.1,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+CVE-2020-0688,Microsoft Exchange Server Static Key RCE,8.8,HIGH,AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+CVE-2022-41082,Microsoft Exchange Server RCE,8.0,HIGH,AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+CVE-2023-27350,PaperCut NG/MF Authentication Bypass,9.8,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+CVE-2022-35914,GLPI Remote Code Execution,9.8,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+CVE-2021-42237,Fortinet FortiOS SSL-VPN RCE,9.8,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+CVE-2022-40684,Fortinet FortiOS Authentication Bypass,9.8,CRITICAL,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H

@@ -21,42 +21,73 @@
         android:hint="IP адрес или CVE ID"
         android:textColor="#67e8f9"
         android:textColorHint="#0e6b7a"
-        android:background="#0c2d3b"
+        android:background="@drawable/edit_bg"
         android:padding="12dp"
         android:layout_marginBottom="10dp"/>
     <Spinner
         android:id="@+id/modeSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#0c2d3b"
+        android:background="@drawable/edit_bg"
         android:layout_marginBottom="10dp"/>
-    <Button
-        android:id="@+id/scanBtn"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="СКАНИРОВАТЬ"
-        android:background="#0891b2"
-        android:textColor="#0a1929"
-        android:textStyle="bold"
-        android:layout_marginBottom="5dp"/>
-    <Button
-        android:id="@+id/netScanBtn"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+        <Button
+            android:id="@+id/scanBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="СКАН"
+            android:background="@drawable/btn_primary"
+            android:textColor="#0a1929"
+            android:textStyle="bold"
+            android:layout_marginEnd="5dp"/>
+        <Button
+            android:id="@+id/netScanBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="СЕТЬ"
+            android:background="@drawable/btn_secondary"
+            android:textColor="#22d3ee"
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"/>
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="СКАНИРОВАТЬ СЕТЬ"
-        android:background="#0c2d3b"
-        android:textColor="#22d3ee"
-        android:textStyle="bold"
-        android:layout_marginBottom="5dp"/>
-    <Button
-        android:id="@+id/cveBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ПОИСК CVE"
-        android:background="#164e63"
-        android:textColor="#67e8f9"
-        android:textStyle="bold"
-        android:layout_marginBottom="10dp"/>
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+        <Button
+            android:id="@+id/cveBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CVE"
+            android:background="@drawable/btn_secondary"
+            android:textColor="#67e8f9"
+            android:layout_marginEnd="5dp"/>
+        <Button
+            android:id="@+id/historyBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ИСТОРИЯ"
+            android:background="@drawable/btn_secondary"
+            android:textColor="#67e8f9"
+            android:layout_marginEnd="5dp"/>
+        <Button
+            android:id="@+id/settingsBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="⚙"
+            android:background="@drawable/btn_secondary"
+            android:textColor="#67e8f9"/>
+    </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -66,7 +97,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#67e8f9"
-            android:background="#0a1929"
             android:padding="10dp"
             android:typeface="monospace"
             android:text="Готов к работе..."/>
