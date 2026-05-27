@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAN Scanner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #0a1929 0%, #0d3b4f 50%, #0a2740 100%);
+            min-height: 100vh;
+            color: #7dd3e8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px;
+            border: 2px solid #22d3ee;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            background: rgba(8, 145, 178, 0.1);
+            box-shadow: 0 0 30px rgba(34, 211, 238, 0.2);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #22d3ee;
+            text-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+            letter-spacing: 3px;
+        }
+
+        .header p {
+            color: #67e8f9;
+            margin-top: 10px;
+        }
+
+        .card {
+            background: rgba(6, 182, 212, 0.05);
+            border: 1px solid #0891b2;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            color: #06b6d4;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #164e63;
+            padding-bottom: 10px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        input, select {
+            background: #0c2d3b;
+            border: 1px solid #0891b2;
+            color: #67e8f9;
+            padding: 12px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 1em;
+        }
+
+        input {
+            flex: 1;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #22d3ee;
+            box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+        }
+
+        input::placeholder {
+            color: #0e6b7a;
+        }
+
+        select {
+            width: 100%;
+        }
+
+        select option {
+            background: #0c2d3b;
+            color: #67e8f9;
+        }
+
+        .btn {
+            background: #0891b2;
+            color: #0a1929;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background: #22d3ee;
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-block {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #0891b2;
+            color: #22d3ee;
+        }
+
+        .btn-outline:hover {
+            background: rgba(8, 145, 178, 0.2);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-group .btn {
+            flex: 1;
+        }
+
+        .result-area {
+            background: #0a1929;
+            border: 1px solid #0891b2;
+            border-radius: 5px;
+            padding: 15px;
+            min-height: 300px;
+            max-height: 500px;
+            overflow-y: auto;
+            color: #67e8f9;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .status {
+            padding: 10px;
+            text-align: center;
+            color: #22d3ee;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: #164e63;
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #22d3ee;
+            width: 0%;
+            transition: width 0.3s;
+            animation: loading 2s infinite;
+        }
+
+        @keyframes loading {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        .badge {
+            display: inline-block;
+            background: #0891b2;
+            color: #0a1929;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .badge-danger {
+            background: #ef4444;
+            color: white;
+        }
+
+        .badge-success {
+            background: #22c55e;
+            color: #0a1929;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #0e6b7a;
+            margin-top: 30px;
+            border-top: 1px solid #164e63;
+        }
+
+        .footer a {
+            color: #22d3ee;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a1929;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #0891b2;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #22d3ee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>LAN_SCANNER</h1>
+            <p>Android Application for Network Scanning</p>
+            <span class="badge badge-success">v1.0</span>
+            <span class="badge">APK</span>
+        </div>
+
+        <div class="card">
+            <h2>Download</h2>
+            <p style="margin-bottom: 15px; color: #67e8f9;">
+                Скачайте APK файл и установите на Android устройство.
+                Требуются root права и nmap binary.
+            </p>
+            <a href="app-release.apk" class="btn btn-block" download>
+                Скачать LAN_Scanner.apk
+            </a>
+        </div>
+
+        <div class="card">
+            <h2>Возможности</h2>
+            <div style="color: #67e8f9; line-height: 2;">
+                <p>1. Сканирование локальной сети</p>
+                <p>2. 10 режимов nmap</p>
+                <p>3. Поиск CVE уязвимостей</p>
+                <p>4. Сохранение отчетов</p>
+                <p>5. Автономная работа</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Режимы сканирования</h2>
+            <div style="color: #67e8f9; line-height: 2;">
+                <p><span class="badge">1</span> Быстрое (топ-100 портов)</p>
+                <p><span class="badge">2</span> Версии служб</p>
+                <p><span class="badge">3</span> Определение ОС</p>
+                <p><span class="badge">4</span> Скрипты NSE</p>
+                <p><span class="badge">5</span> Агрессивное</p>
+                <p><span class="badge">6</span> Все порты (1-65535)</p>
+                <p><span class="badge">7</span> UDP сканирование</p>
+                <p><span class="badge">8</span> Проверка CVE</p>
+                <p><span class="badge badge-danger">9</span> МОЩНЫЙ РЕЖИМ</p>
+                <p><span class="badge badge-danger">10</span> УЛЬТИМАТИВНЫЙ</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Требования</h2>
+            <div style="color: #67e8f9; line-height: 2;">
+                <p>Android 7.0 (API 24)</p>
+                <p>Root права</p>
+                <p>nmap binary в /data/local/tmp/nmap</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Установка</h2>
+            <div style="color: #67e8f9; line-height: 2;">
+                <p>1. Скачайте APK</p>
+                <p>2. Разрешите установку из неизвестных источников</p>
+                <p>3. Установите APK</p>
+                <p>4. Установите nmap через Termux или скопируйте бинарник</p>
+                <p>5. Запустите приложение</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>LAN Scanner 2026 | <a href="https://github.com/USERNAME/LAN_Scanner">GitHub</a></p>
+        </div>
+    </div>
+</body>
+</html>

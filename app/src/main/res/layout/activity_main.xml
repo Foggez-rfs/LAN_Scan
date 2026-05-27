@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#0a1929">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LAN SCAN"
+        android:textColor="#22d3ee"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"/>
+    <EditText
+        android:id="@+id/targetInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="IP адрес"
+        android:textColor="#67e8f9"
+        android:textColorHint="#0e6b7a"
+        android:background="#0c2d3b"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"/>
+    <Spinner
+        android:id="@+id/modeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0c2d3b"
+        android:layout_marginBottom="10dp"/>
+    <Button
+        android:id="@+id/scanBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="СКАНИРОВАТЬ"
+        android:background="#0891b2"
+        android:textColor="#0a1929"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"/>
+    <Button
+        android:id="@+id/netScanBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="СКАНИРОВАТЬ СЕТЬ"
+        android:background="#0c2d3b"
+        android:textColor="#22d3ee"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/resultText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#67e8f9"
+            android:background="#0a1929"
+            android:padding="10dp"
+            android:typeface="monospace"
+            android:text="Готов к работе..."/>
+    </ScrollView>
+</LinearLayout>
