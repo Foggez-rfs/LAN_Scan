@@ -18,24 +18,27 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
     
-    - name: Setup Android SDK
-      uses: android-actions/setup-android@v3
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v3
     
-    - name: Create local properties
-      run: echo "sdk.dir=$ANDROID_HOME" > local.properties
+    - name: Make gradlew executable
+      run: chmod +x gradlew
     
-    - name: Create gradlew
-      run: |
-        echo '#!/bin/bash' > gradlew
-        echo 'export ANDROID_HOME=$ANDROID_HOME' >> gradlew
-        echo 'exec gradle "$@"' >> gradlew
-        chmod +x gradlew
-    
-    - name: Build APK
-      run: gradle assembleRelease
+    - name: Build with Gradle
+      run: ./gradlew assembleRelease --stacktrace
     
     - name: Upload APK
+      if: success()
       uses: actions/upload-artifact@v4
       with:
         name: LAN_Scan
         path: app/build/outputs/apk/release/app-release.apk
+    
+    - name: Upload build logs on failure
+      if: failure()
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-logs
+        path: |
+          app/build/reports/
+          build/reports/
