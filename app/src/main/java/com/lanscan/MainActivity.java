@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private Button scanBtn, netScanBtn;
     private TextView resultText;
     private Handler handler;
-    private static final String NMAP = "/data/local/tmp/nmap";
+    private static String nmapPath;
 
     private static final String[] MODES = {
         "1. Быстрое", "2. Версии", "3. ОС", "4. NSE", "5. Агрессивное",
@@ -46,21 +46,41 @@ public class MainActivity extends AppCompatActivity {
         resultText = findViewById(R.id.resultText);
 
         modeSpinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, MODES));
+        
+        setupNmap();
 
         scanBtn.setOnClickListener(v -> {
             String ip = targetInput.getText().toString().trim();
             if (ip.isEmpty()) { toast("Введите IP"); return; }
-            runCmd(NMAP + " " + ARGS[modeSpinner.getSelectedItemPosition()] + " " + ip);
+            runCmd(nmapPath + " " + ARGS[modeSpinner.getSelectedItemPosition()] + " " + ip);
         });
 
-        netScanBtn.setOnClickListener(v -> runCmd(NMAP + " -sn 192.168.1.0/24"));
+        netScanBtn.setOnClickListener(v -> runCmd(nmapPath + " -sn 192.168.1.0/24"));
+    }
+
+    private void setupNmap() {
+        try {
+            InputStream in = getAssets().open("nmap");
+            File outFile = new File(getFilesDir(), "nmap");
+            FileOutputStream out = new FileOutputStream(outFile);
+            byte[] buf = new byte[8192];
+            int len;
+            while ((len = in.read(buf)) > 0) out.write(buf, 0, len);
+            in.close();
+            out.close();
+            outFile.setExecutable(true);
+            nmapPath = outFile.getAbsolutePath();
+            toast("Nmap готов");
+        } catch (Exception e) {
+            toast("Ошибка nmap: " + e.getMessage());
+        }
     }
 
     private void runCmd(String cmd) {
-        resultText.setText("Выполняется...\n");
+        resultText.setText("Сканирование...\n");
         new Thread(() -> {
             try {
-                Process p = Runtime.getRuntime().exec(new String[]{"su", "-c", cmd});
+                Process p = Runtime.getRuntime().exec(cmd);
                 BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
                 StringBuilder sb = new StringBuilder();
                 String l;
