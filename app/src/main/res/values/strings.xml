@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LAN Scan</string>
+    <string name="scan">Сканировать</string>
+    <string name="network_scan">Сканировать сеть</string>
+    <string name="cve_search">Поиск CVE</string>
+    <string name="history">История</string>
+    <string name="settings">Настройки</string>
+    <string name="about">О приложении</string>
+    <string name="export">Экспорт</string>
+    <string name="delete">Удалить</string>
+    <string name="copy">Копировать</string>
+    <string name="share">Поделиться</string>
+    <string name="scanning">Сканирование…</string>
+    <string name="ready">Готов к работе</string>
+    <string name="error">Ошибка</string>
+    <string name="no_results">Нет результатов</string>
+    <string name="target_hint">IP адрес или CVE ID</string>
+    <string name="mode_select">Выберите режим</string>
+</resources>
