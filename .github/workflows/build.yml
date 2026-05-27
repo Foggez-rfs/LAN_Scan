@@ -24,11 +24,26 @@ jobs:
     - name: Make gradlew executable
       run: chmod +x gradlew
     
+    - name: Show project structure
+      run: |
+        echo "=== Project files ==="
+        find . -name "*.java" -o -name "*.xml" -o -name "*.gradle" | head -30
+        echo "=== Gradle files ==="
+        ls -la *.gradle app/*.gradle 2>/dev/null || echo "No gradle files"
+    
     - name: Build APK
       run: |
-        ./gradlew assembleRelease --no-daemon --stacktrace
+        ./gradlew assembleRelease --no-daemon --info 2>&1 | tee build.log
+    
+    - name: Upload build log
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-log
+        path: build.log
     
     - name: Upload APK
+      if: success()
       uses: actions/upload-artifact@v4
       with:
         name: LAN_Scan
