@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Проверка кода (Checkout)
+    - name: Проверка кода
       uses: actions/checkout@v4
       
     - name: Настройка JDK 17
@@ -19,9 +19,12 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         
-    - name: Сборка APK через Gradle
-      run: chmod +x gradlew && ./gradlew assembleDebug
-      
+    - name: Сборка APK (из папки app)
+      run: |
+        cd app
+        chmod +x gradlew
+        ./gradlew assembleDebug --stacktrace
+        
     - name: Загрузка APK в релиз
       uses: softprops/action-gh-release@v1
       with:
