@@ -19,14 +19,8 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         
-    - name: Установка Gradle
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y gradle
-        
     - name: Сборка APK
       run: |
-        cd app
         gradle assembleDebug --stacktrace
         
     - name: Загрузка APK в релиз
