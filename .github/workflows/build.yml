@@ -19,9 +19,8 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         
-    - name: Сборка APK (из папки app)
+    - name: Сборка APK
       run: |
-        cd app
         chmod +x gradlew
         ./gradlew assembleDebug --stacktrace
         
