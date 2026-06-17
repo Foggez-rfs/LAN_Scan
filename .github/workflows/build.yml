@@ -21,7 +21,8 @@ jobs:
         
     - name: Сборка APK
       run: |
-        gradle assembleDebug --stacktrace
+        chmod +x gradlew
+        ./gradlew assembleDebug --stacktrace
         
     - name: Загрузка APK в релиз
       uses: softprops/action-gh-release@v1
